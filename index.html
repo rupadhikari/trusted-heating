@@ -1,295 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trusted Heating and Cooling</title>
-<style>
-:root{
-  --bg:#050508;
-  --accent:#14b8a6;
-  --text:#ffffff;
-  --card-bg:rgba(255,255,255,0.07);
-  --card-border:rgba(255,255,255,0.12);
-  --space:8px;
-  --radius:12px;
-  --transition:0.3s ease;
-  --font-sans:Inter, "Segoe UI", system-ui, sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{font-family:var(--font-sans);color:var(--text);background:var(--bg);}
-body{line-height:1.5;overflow-x:hidden;}
-a{color:var(--accent);text-decoration:none;}
-a:hover{opacity:0.8;}
-.skip-link{
-  position:absolute;
-  left:-999px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
-}
-.skip-link:focus{
-  left:var(--space);
-  top:var(--space);
-  width:auto;
-  height:auto;
-  background:#000;
-  color:#fff;
-  padding:var(--space) var(--space)*2;
-  z-index:1000;
-}
-h1{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:calc(var(--space)*2);}
-h2{font-size:clamp(1.5rem,4vw,2.5rem);margin-bottom:calc(var(--space)*2);}
-h3{font-size:clamp(1.25rem,3vw,2rem);margin-bottom:calc(var(--space)*1.5);}
-section{padding:calc(var(--space)*4) var(--space);}
-.container{max-width:1200px;margin:auto;padding:0 var(--space);}
-.hero{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-  min-height:80vh;
-  justify-content:center;
-}
-.hero .cta{
-  margin-top:calc(var(--space)*2);
-  padding:calc(var(--space)*1) calc(var(--space)*3);
-  background:var(--accent);
-  color:#fff;
-  border:none;
-  border-radius:var(--radius);
-  cursor:pointer;
-  font-size:1rem;
-  transition:var(--transition);
-}
-.hero .cta:hover{opacity:0.9;}
-.glass{
-  background:var(--card-bg);
-  border:1px solid var(--card-border);
-  border-radius:var(--radius);
-  backdrop-filter:blur(8px);
-  padding:calc(var(--space)*3);
-  margin:calc(var(--space)*2) 0;
-}
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:calc(var(--space)*3);
-}
-.service-card{
-  text-align:center;
-}
-.service-card h3{margin-top:calc(var(--space)*2);}
-.highlights{
-  display:flex;
-  flex-wrap:wrap;
-  gap:calc(var(--space)*3);
-  justify-content:center;
-}
-.highlight{
-  flex:1 1 200px;
-  text-align:center;
-}
-.faq button{
-  width:100%;
-  text-align:left;
-  background:none;
-  border:none;
-  color:var(--text);
-  padding:calc(var(--space)*2);
-  font-size:1rem;
-  cursor:pointer;
-  position:relative;
-}
-.faq button::after{
-  content:"▾";
-  position:absolute;
-  right:calc(var(--space)*2);
-  transition:transform var(--transition);
-}
-.faq button[aria-expanded="true"]::after{
-  transform:rotate(180deg);
-}
-.faq .answer{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height var(--transition);
-  padding:0 calc(var(--space)*2);
-}
-.faq .answer.open{
-  max-height:200px;
-  padding-top:calc(var(--space)*1);
-}
-.contact form{
-  display:flex;
-  flex-direction:column;
-  gap:calc(var(--space)*2);
-}
-.contact input,
-.contact textarea{
-  padding:calc(var(--space)*1);
-  border:none;
-  border-radius:var(--radius);
-  background:rgba(255,255,255,0.1);
-  color:var(--text);
-}
-.contact button{
-  align-self:flex-start;
-  background:var(--accent);
-  color:#fff;
-  border:none;
-  padding:calc(var(--space)*1) calc(var(--space)*3);
-  border-radius:var(--radius);
-  cursor:pointer;
-  transition:var(--transition);
-}
-.contact button:hover{opacity:0.9;}
-footer{
-  background:rgba(0,0,0,0.5);
-  padding:calc(var(--space)*4) var(--space);
-  text-align:center;
-}
-footer p{margin:calc(var(--space)*1) 0;}
-.reveal{
-  opacity:0;
-  transform:translateY(20px);
-  transition:opacity .6s ease,transform .6s ease;
-}
-.reveal.visible{opacity:1;transform:none;}
-@media (prefers-reduced-motion: reduce){
-  .reveal{transition:none;}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trusted Heating and Cooling – HVAC Services in Austin, TX</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #0f172a;
+            --accent: #0369a1;
+            --border: #e2e8f0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        header {
+            background: var(--surface);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,.05);
+        }
+        .container {
+            width: min(90%, 1200px);
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: background .3s;
+        }
+        .cta-btn:hover {
+            background: #02557a;
+        }
+        section {
+            padding: 3rem 1rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .card {
+            flex: 1 1 calc(25% - 1.5rem);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,.08);
+        }
+        .card h3 {
+            margin-top: 0.75rem;
+            font-size: 1.25rem;
+            color: var(--accent);
+        }
+        .highlights, .certs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .highlight, .cert {
+            flex: 1 1 200px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+        }
+        .highlight h4, .cert h4 {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            color: var(--accent);
+        }
+        .contact {
+            background: var(--surface);
+            text-align: center;
+        }
+        .contact p {
+            margin: 0.5rem 0;
+        }
+        .footer {
+            background: var(--text);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.875rem;
+        }
+        @media (max-width: 900px) {
+            .card { flex: 1 1 calc(50% - 1.5rem); }
+        }
+        @media (max-width: 600px) {
+            .card { flex: 1 1 100%; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
-<a href="#main" class="skip-link">Skip to main content</a>
 
-<header class="hero glass reveal">
-  <div class="container">
-    <h1>Trusted Heating &amp; Cooling</h1>
-    <p style="font-size:clamp(1rem,2.5vw,1.25rem);margin-bottom:calc(var(--space)*2);">Your comfort, our commitment – Austin’s premier HVAC service.</p>
-    <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Schedule Service</button>
-  </div>
+<header>
+    <div class="container">
+        <div class="logo">Trusted Heating &amp; Cooling</div>
+    </div>
 </header>
 
-<main id="main">
-  <section class="services glass reveal">
+<section class="hero">
     <div class="container">
-      <h2>Our Services</h2>
-      <div class="services">
-        <div class="service-card glass">
-          <h3>Heating Repair</h3>
-          <p>Fast, reliable repairs to keep your home warm.</p>
-        </div>
-        <div class="service-card glass">
-          <h3>AC Repair</h3>
-          <p>Cool solutions for Austin’s hot summers.</p>
-        </div>
-        <div class="service-card glass">
-          <h3>Heat Pumps</h3>
-          <p>Energy‑efficient heating and cooling year‑round.</p>
-        </div>
-        <div class="service-card glass">
-          <h3>Maintenance Plans</h3>
-          <p>Preventive care to extend equipment life.</p>
-        </div>
-      </div>
+        <h1>Reliable HVAC Services in Austin, TX</h1>
+        <p>Fast, honest, and professional heating and cooling solutions for homes and businesses. From repairs to maintenance plans, we keep you comfortable year‑round.</p>
+        <a href="tel:+15123456789" class="cta-btn">Call Us: (512) 345‑6789</a>
     </div>
-  </section>
+</section>
 
-  <section class="highlights glass reveal">
+<section id="services">
     <div class="container">
-      <h2>Why Choose Us</h2>
-      <div class="highlights">
-        <div class="highlight">
-          <h3>BBB Accredited</h3>
-          <p>Trusted by the community.</p>
+        <h2 class="section-title">Our Services</h2>
+        <div class="grid">
+            <div class="card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M24 2a22 22 0 1 0 22 22A22.025 22.025 0 0 0 24 2zm0 40a18 18 0 1 1 18-18 18.02 18.02 0 0 1-18 18z"/></svg>
+                <h3>Heating Repair</h3>
+                <p>Quick diagnostics and same‑day repairs to restore warmth.</p>
+            </div>
+            <div class="card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M12 6h24v12H12zM6 24h36v12H6z"/></svg>
+                <h3>AC Repair</h3>
+                <p>Efficient cooling solutions and emergency service when you need it.</p>
+            </div>
+            <div class="card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M12 12h24v24H12z"/></svg>
+                <h3>Heat Pumps</h3>
+                <p>Installation and service for energy‑saving heat pump systems.</p>
+            </div>
+            <div class="card">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M6 18h36v12H6z"/></svg>
+                <h3>Maintenance Plans</h3>
+                <p>Scheduled tune‑ups to keep your system running efficiently.</p>
+            </div>
         </div>
-        <div class="highlight">
-          <h3>Upfront Pricing</h3>
-          <p>No hidden fees.</p>
-        </div>
-        <div class="highlight">
-          <h3>Senior Discounts</h3>
-          <p>Special rates for seniors.</p>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <section class="faq glass reveal">
+<section id="highlights" style="background: var(--bg);">
     <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <button aria-expanded="false" aria-controls="answer1">What areas do you service?</button>
-        <div id="answer1" class="answer" role="region" aria-labelledby="faq1">
-          <p>We proudly serve Austin, TX and surrounding suburbs.</p>
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="highlights">
+            <div class="highlight">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M12 22l8 8 16-16"/></svg>
+                <h4>BBB Accredited</h4>
+                <p>Trusted by the Better Business Bureau.</p>
+            </div>
+            <div class="highlight">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h40v24H4z"/></svg>
+                <h4>Upfront Pricing</h4>
+                <p>No hidden fees, clear estimates.</p>
+            </div>
+            <div class="highlight">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M12 20h24v12H12z"/></svg>
+                <h4>Senior Discounts</h4>
+                <p>Special rates for seniors.</p>
+            </div>
+            <div class="highlight">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M8 8h32v32H8z"/></svg>
+                <h4>Financing Available</h4>
+                <p>Flexible payment options.</p>
+            </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <button aria-expanded="false" aria-controls="answer2">Do you offer emergency service?</button>
-        <div id="answer2" class="answer" role="region">
-          <p>Yes, 24/7 emergency repairs are available.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button aria-expanded="false" aria-controls="answer3">How can I schedule maintenance?</button>
-        <div id="answer3" class="answer" role="region">
-          <p>Use the contact form below or call us at (512) 345‑6789.</p>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <section class="contact glass reveal" id="contact">
+<section id="certifications">
     <div class="container">
-      <h2>Contact Us</h2>
-      <p>Phone: <a href="tel:+15123456789">(512) 345‑6789</a></p>
-      <form action="mailto:info@trustedhvac.com" method="post" enctype="text/plain">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+        <h2 class="section-title">Certifications &amp; Ratings</h2>
+        <div class="certs">
+            <div class="cert">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M24 2l6 12h13l-10 9 4 12-10-7-10 7 4-12-10-9h13z"/></svg>
+                <h4>BBB A+</h4>
+                <p>Exceeds industry standards.</p>
+            </div>
+            <div class="cert">
+                <svg width="48" height="48" fill="var(--accent)" xmlns="http://www.w3.org/2000/svg"><path d="M12 24l8 8 16-16"/></svg>
+                <h4>NATE Certified</h4>
+                <p>Technicians certified by the North American Technician Excellence.</p>
+            </div>
+        </div>
     </div>
-  </section>
-</main>
+</section>
 
-<footer class="glass">
-  <div class="container">
-    <p>© 2026 Trusted Heating &amp; Cooling</p>
-    <p>512 345‑6789 | <a href="mailto:info@trustedhvac.com">info@trustedhvac.com</a></p>
-    <p>1234 Elm St, Austin, TX 78701</p>
-  </div>
+<section class="contact">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p><strong>Phone:</strong> <a href="tel:+15123456789">(512) 345‑6789</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@trustedhvac.com">info@trustedhvac.com</a></p>
+        <p>Serving Austin, TX and surrounding areas.</p>
+    </div>
+</section>
+
+<footer class="footer">
+    &copy; <script>document.write(new Date().getFullYear());</script> Trusted Heating &amp; Cooling. All rights reserved.
 </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  // Reveal on scroll
-  const observer = new IntersectionObserver((entries)=> {
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },{threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-  // FAQ accordion
-  document.querySelectorAll('.faq button').forEach(btn=>{
-    btn.addEventListener('click',()=> {
-      const expanded = btn.getAttribute('aria-expanded')==='true';
-      btn.setAttribute('aria-expanded',!expanded);
-      const answer = document.getElementById(btn.getAttribute('aria-controls'));
-      answer.classList.toggle('open',!expanded);
-    });
-  });
-});
-</script>
 </body>
 </html>
